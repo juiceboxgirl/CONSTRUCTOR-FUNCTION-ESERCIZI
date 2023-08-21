@@ -26,6 +26,8 @@ const ageComparison = alessia.compareAge(beatrice);
 
 console.log(ageComparison);
 
+// Esercizio 2 //
+
 console.log("-------ESERCIZIO 2-------");
 
 class Pet {
@@ -53,3 +55,29 @@ console.log(aki);
 
 const petComparison = aki.compareOwner(vinny);
 console.log(petComparison);
+
+// Esercizio 3 //
+
+console.log("-------ESERCIZIO 3-------");
+
+const petForm = document.getElementById("petForm");
+const petList = document.getElementById("petList");
+
+petForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const petName = document.getElementById("petName").value;
+  const ownerName = document.getElementById("ownerName").value;
+  const species = document.getElementById("species").value;
+  const breed = document.getElementById("breed").value;
+
+  const newPet = new Pet(petName, ownerName, species, breed);
+  addPetToList(newPet);
+  petForm.reset();
+});
+
+function addPetToList(pet) {
+  const listItem = document.createElement("li");
+  listItem.textContent = `${pet.petName} - ${pet.species} (${pet.breed}) - Proprietario: ${pet.ownerName}`;
+  petList.appendChild(listItem);
+}
