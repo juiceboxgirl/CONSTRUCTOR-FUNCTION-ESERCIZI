@@ -27,3 +27,29 @@ const ageComparison = alessia.compareAge(beatrice);
 console.log(ageComparison);
 
 console.log("-------ESERCIZIO 2-------");
+
+class Pet {
+  constructor(petName, ownerName, species, breed) {
+    this.petName = petName;
+    this.ownerName = ownerName;
+    this.species = species;
+    this.breed = breed;
+  }
+
+  compareOwner(secondPet) {
+    if (this.ownerName === secondPet.ownerName) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+const aki = new Pet("Aki", "Alessia", "cat", "European");
+const vinny = new Pet("Vinny", "Alessia", "cat", "mixed");
+const flash = new Pet("Flash", "Giulia", "cat", "mixed");
+
+console.log(aki);
+
+const petComparison = aki.compareOwner(vinny);
+console.log(petComparison);
